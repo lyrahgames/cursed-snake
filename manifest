@@ -1,0 +1,17 @@
+: 1
+name: snake
+version: 0.1.0-a.0.z
+summary: snake C++ executable
+license: other: proprietary ; Not free/open source.
+
+description-file: README.md
+url: https://example.org/snake
+email: lyrahgames@mailbox.org
+
+depends: * build2 >= 0.13.0
+depends: * bpkg >= 0.13.0
+
+requires: c++17
+requires: linux
+requires: gcc | clang
+requires: ncurses ^ 6.2
