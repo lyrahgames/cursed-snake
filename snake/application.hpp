@@ -18,7 +18,10 @@ class application {
 
   game state{};
   bool running = true;
-  WINDOW *window = nullptr;
+  bool pause = true;
+  WINDOW* window = nullptr;
+
+  WINDOW* menu = nullptr;
 
   application() {
     initscr();
@@ -28,8 +31,15 @@ class application {
     nodelay(stdscr, true);
     curs_set(0);
     int cols, rows;
-    getmaxyx(stdscr, cols, rows);
-    window = newwin(state.height, scale * state.width, 1, scale * 1);
+    getmaxyx(stdscr, rows, cols);
+    window =
+        newwin(state.height, scale * state.width, rows / 2 - state.height / 2,
+               cols / 2 - scale * state.width / 2);
+
+    int menu_width = 20;
+    int menu_height = 10;
+    menu = newwin(menu_height, menu_width, rows / 2 - menu_height / 2,
+                  cols / 2 - menu_width / 2);
   }
 
   ~application() {
@@ -41,6 +51,10 @@ class application {
     switch (input) {
       case 'q':
         running = false;
+        break;
+      case 'p':
+        pause = !pause;
+        if (state.dead) state = game{};
         break;
       case KEY_UP:
         state.up();
@@ -64,7 +78,7 @@ class application {
 
     // move(state.food.y, scale * state.food.x);
     // addch(ACS_BULLET);
-    mvwaddch(window, state.food.y, scale * state.food.x, ACS_BULLET);
+    mvwaddch(window, state.food.y, scale * state.food.x, ACS_DEGREE);
 
     for (auto [x, y] : state.snake) {
       // move(y, scale * x);
@@ -94,13 +108,21 @@ class application {
       const auto time_diff = chrono::duration<float>(new_time - time).count();
       if (time_diff > frame_time) {
         time = new_time;
-        state.advance();
-        if (state.dead) running = false;
-        wclear(window);
-        clear();
-        render();
-        refresh();
-        wrefresh(window);
+
+        if (pause) {
+          wclear(menu);
+          box(menu, 0, 0);
+          mvwprintw(menu, 1, 1, "Pause");
+          wrefresh(menu);
+        } else {
+          state.advance();
+          if (state.dead) pause = true;
+          wclear(window);
+          render();
+          wrefresh(window);
+        }
+        // clear();
+        // refresh();
       }
 
       // Handel input frame rate.

@@ -25,8 +25,8 @@ struct game {
   game() { spawn_food(); }
 
   void spawn_food() {
-    std::uniform_int_distribution<int> distribution_x{1, width - 2};
-    std::uniform_int_distribution<int> distribution_y{1, height - 2};
+    std::uniform_int_distribution<int> distribution_x(1, width - 2);
+    std::uniform_int_distribution<int> distribution_y(1, height - 2);
 
     bool gen;
     do {
