@@ -13,5 +13,7 @@
 
 !COPYING
 
+!docs/**
+
 !.gitignore
 !.gitattributes
