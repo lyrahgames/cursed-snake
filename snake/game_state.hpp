@@ -9,7 +9,7 @@ struct position {
   int y{};
 };
 
-struct game {
+struct game_state {
   bool dead = false;
 
   size_t width{20};
@@ -22,7 +22,7 @@ struct game {
 
   std::mt19937 rng{std::random_device{}()};
 
-  game() { spawn_food(); }
+  game_state() { spawn_food(); }
 
   void spawn_food() {
     std::uniform_int_distribution<int> distribution_x(1, width - 2);
