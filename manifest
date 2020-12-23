@@ -1,11 +1,11 @@
 : 1
 name: snake
 version: 0.1.0-a.0.z
-summary: snake C++ executable
-license: other: proprietary ; Not free/open source.
+summary: Simple Snake Variant Written in Ncurses and Playable in the Shell
+license: GPL-3.0-or-later ; GNU General Public License v3.0 or later
 
 description-file: README.md
-url: https://example.org/snake
+# url: https://example.org/snake
 email: lyrahgames@mailbox.org
 
 depends: * build2 >= 0.13.0

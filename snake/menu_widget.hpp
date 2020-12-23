@@ -21,8 +21,8 @@ class menu_widget : public widget {
   ~menu_widget();
 
   void process_input(int input) override;
-  void update();
-  void render();
+  void update() override;
+  void render() override;
 };
 
 }  // namespace lyrahgames::snake
