@@ -11,7 +11,7 @@ namespace lyrahgames::snake {
 
 class application {
  public:
-  static constexpr float fps = 10;
+  static constexpr float fps = 15;
   static constexpr float frame_time = 1 / fps;
 
   bool running = true;

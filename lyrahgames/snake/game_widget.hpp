@@ -17,7 +17,7 @@ class game_widget : public widget {
   game_state game{};
   menu_widget* menu = nullptr;
   WINDOW* window = nullptr;
-  float transition_time = 1.0f / 3.0f;
+  float transition_time = 1.0f / 8.0f;
 
   std::chrono::time_point<std::chrono::system_clock> time =
       std::chrono::system_clock::now();
@@ -27,6 +27,7 @@ class game_widget : public widget {
 
   void pause();
   void play();
+  void restart();
 
   void process_input(int input) override;
   void update() override;

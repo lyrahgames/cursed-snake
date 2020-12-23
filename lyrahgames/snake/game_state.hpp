@@ -12,8 +12,8 @@ struct position {
 struct game_state {
   bool dead = false;
 
-  size_t width{20};
-  size_t height{20};
+  size_t width{32};
+  size_t height{16};
 
   std::list<position> snake{{10, 10}, {10, 11}, {11, 11}};
   position direction{0, -1};

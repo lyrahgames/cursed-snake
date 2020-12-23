@@ -45,9 +45,14 @@ void game_widget::play() {
   app.focus = this;
 }
 
+void game_widget::restart() {
+  game = {};
+  play();
+}
+
 void game_widget::update() {
   if (is_paused) return;
-  if (game.dead) game = {};
+  if (game.dead) restart();
 
   using namespace std;
   // Handle frame rate for rendering and advancing game state.

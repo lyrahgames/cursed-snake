@@ -20,6 +20,8 @@ class menu_widget : public widget {
   menu_widget();
   ~menu_widget();
 
+  void select_entry();
+
   void process_input(int input) override;
   void update() override;
   void render() override;
