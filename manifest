@@ -1,5 +1,5 @@
 : 1
-name: snake
+name: cursed-snake
 version: 0.1.0-a.0.z
 summary: Simple Snake Variant Written in Ncurses and Playable in the Shell
 license: GPL-3.0-or-later ; GNU General Public License v3.0 or later

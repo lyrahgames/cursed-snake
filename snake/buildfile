@@ -1,6 +1,0 @@
-libs =
-import libs += ncurses%lib{ncurses}
-
-exe{snake}: {hxx ixx txx cxx}{**} $libs
-
-cxx.poptions =+ "-I$out_root" "-I$src_root"

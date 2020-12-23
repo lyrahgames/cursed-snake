@@ -1,4 +1,4 @@
-project = snake
+project = cursed-snake
 
 using version
 using config

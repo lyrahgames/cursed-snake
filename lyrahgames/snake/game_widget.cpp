@@ -1,5 +1,5 @@
-#include <snake/game_widget.hpp>
-#include <snake/menu_widget.hpp>
+#include <lyrahgames/snake/game_widget.hpp>
+#include <lyrahgames/snake/menu_widget.hpp>
 
 namespace lyrahgames::snake {
 

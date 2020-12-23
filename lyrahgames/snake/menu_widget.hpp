@@ -1,8 +1,8 @@
 #pragma once
 #include <ncurses.h>
 //
-#include <snake/application.hpp>
-#include <snake/widget.hpp>
+#include <lyrahgames/snake/application.hpp>
+#include <lyrahgames/snake/widget.hpp>
 
 namespace lyrahgames::snake {
 

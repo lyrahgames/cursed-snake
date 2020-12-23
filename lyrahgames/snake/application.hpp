@@ -5,9 +5,7 @@
 //
 #include <ncurses.h>
 //
-// #include <snake/game_widget.hpp>
-// #include <snake/menu_widget.hpp>
-#include <snake/widget.hpp>
+#include <lyrahgames/snake/widget.hpp>
 
 namespace lyrahgames::snake {
 
